@@ -1,0 +1,19 @@
+==============================================================
+TEST 6 - Browser Tool
+Date: 2026-10-11 20:07:06 UTC
+$ agentcore invoke '{"prompt": "Go to https://www.udacity.com and tell me the page title.", "customer_id": "CUST-123", "session_id": "t6"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: e347531c-9608-4f67-b427-059297f9559b                                                                                                     │
+│ Request ID: 11d9a059-d816-45aa-b400-84cb16fba9b6                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+The page title of https://www.udacity.com is:
+
+**"Learn the Latest Tech Skills; Advance Your Career | Udacity"**
+

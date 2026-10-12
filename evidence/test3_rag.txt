@@ -1,0 +1,25 @@
+==============================================================
+TEST 3 - Knowledge Base (RAG)
+Date: 2026-10-11 20:05:43 UTC
+$ agentcore invoke '{"prompt": "What are the benefits of the Platinum loyalty tier?", "customer_id": "CUST-123", "session_id": "t3"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: e347531c-9608-4f67-b427-059297f9559b                                                                                                     │
+│ Request ID: 2b0334c9-002d-4d70-b785-f4fbddf53951                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+The Platinum loyalty tier offers these key benefits:
+
+- **Free same-day shipping** on eligible orders
+- **15% discount** on purchases (higher than Gold tier's 10%)
+- **Priority customer support** for faster assistance
+
+Additionally, Platinum members earn points at the same rate as other tiers (1 point per $1 spent on standard items, 2 points per $1 on Amazon 
+devices, and 5 points per $1 on Amazon Fresh), and can redeem points at the same rate (100 points = $1 discount, with a minimum redemption of 500 
+points). Points remain valid for 2 years from the date earned.
+

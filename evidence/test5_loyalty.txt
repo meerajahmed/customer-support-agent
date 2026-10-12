@@ -1,0 +1,28 @@
+==============================================================
+TEST 5 - Loyalty Discount (Code Interpreter)
+Date: 2026-10-11 20:06:58 UTC
+$ agentcore invoke '{"prompt": "I am a Gold member with 4250 points. Calculate my discount on a $150 standard order.", "customer_id": "CUST-123", "session_id": "t5"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: e347531c-9608-4f67-b427-059297f9559b                                                                                                     │
+│ Request ID: 2f99e6bc-2096-459b-9144-e14559075076                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Your Gold membership discount breakdown for a $150 standard order is:
+
+**Total Savings: $51.00**
+- **Loyalty Points Redeemed:** 4,000 points ($40.00 value)
+- **Gold Tier Discount:** 10% ($11.00)
+- **Final Total:** $99.00
+
+**Loyalty Points Update:**
+- **Points Earned:** 99 points
+- **Remaining Points Balance:** 349 points
+
+Your order will be processed at the discounted rate of $99.00.
+

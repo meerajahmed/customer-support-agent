@@ -218,3 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+/dev/*
+.DS_Store
+.bedrock_agentcore/
+.bedrock_agentcore.yaml
+.venv/
+*.zip

@@ -1,0 +1,17 @@
+==============================================================
+TEST 4 - Long-Term Memory - Session B (NEW session, same customer)
+Date: 2026-10-11 20:54:11 UTC
+$ agentcore invoke '{"prompt": "Do you remember my name and communication preference?", "customer_id": "CUST-123", "session_id": "s-B2"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: 88907d4d-9439-4db4-8bf1-f6e56d449c0e                                                                                                     │
+│ Request ID: 2bedbf91-a28b-451b-b09a-7ae43cb7e418                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Hello Jane! I remember your name and that you prefer concise responses. How can I help you today?
+

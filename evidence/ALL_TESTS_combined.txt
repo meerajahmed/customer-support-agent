@@ -1,0 +1,157 @@
+==============================================================
+TEST 1 - Order Tracking
+Date: 2026-10-11 20:05:30 UTC
+$ agentcore invoke '{"prompt": "Can you track order ORD-001?", "customer_id": "CUST-123", "session_id": "t1"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: e347531c-9608-4f67-b427-059297f9559b                                                                                                     │
+│ Request ID: fd10ecf1-6491-4bfc-95ae-c3b87cbe2562                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Your order **ORD-001** for the **Wireless Headphones Pro** has been shipped! Here are the details:
+
+- **Status:** SHIPPED  
+- **Items:** 1 x Wireless Headphones Pro ($89.99)  
+- **Total:** $89.99  
+- **Carrier:** UPS  
+- **Tracking Number:** TRK987654321  
+- **Estimated Delivery:** October 13, 2026  
+
+You can track your package using the tracking number TRK987654321 on the UPS website or app. If you need further assistance, just let me know!
+
+==============================================================
+TEST 2 - Refund Processing
+Date: 2026-10-11 20:05:36 UTC
+$ agentcore invoke '{"prompt": "I want to return my Kindle Paperwhite (ORD-002). Please initiate a refund.", "customer_id": "CUST-123", "session_id": "t2"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: e347531c-9608-4f67-b427-059297f9559b                                                                                                     │
+│ Request ID: 31ac22a9-58e9-4616-9fc3-02a435deed32                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Your return and refund for order ORD-002 (Kindle Paperwhite) has been successfully processed!
+
+- **Refund ID:** REF-A935DZXO
+- **Amount:** $139.99
+- **Status:** Approved
+- **Credit timeline:** Will appear in your account within 3-5 business days
+
+The refund is now approved and your credit should reflect this amount shortly. Thank you for shopping with us!
+
+==============================================================
+TEST 3 - Knowledge Base (RAG)
+Date: 2026-10-11 20:05:43 UTC
+$ agentcore invoke '{"prompt": "What are the benefits of the Platinum loyalty tier?", "customer_id": "CUST-123", "session_id": "t3"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: e347531c-9608-4f67-b427-059297f9559b                                                                                                     │
+│ Request ID: 2b0334c9-002d-4d70-b785-f4fbddf53951                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+The Platinum loyalty tier offers these key benefits:
+
+- **Free same-day shipping** on eligible orders
+- **15% discount** on purchases (higher than Gold tier's 10%)
+- **Priority customer support** for faster assistance
+
+Additionally, Platinum members earn points at the same rate as other tiers (1 point per $1 spent on standard items, 2 points per $1 on Amazon 
+devices, and 5 points per $1 on Amazon Fresh), and can redeem points at the same rate (100 points = $1 discount, with a minimum redemption of 500 
+points). Points remain valid for 2 years from the date earned.
+
+==============================================================
+TEST 4 - Long-Term Memory - Session A (introduce yourself)
+Date: 2026-10-11 20:51:05 UTC
+$ agentcore invoke '{"prompt": "Hi, I am Jane. I prefer concise responses.", "customer_id": "CUST-123", "session_id": "s-A2"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: 88907d4d-9439-4db4-8bf1-f6e56d449c0e                                                                                                     │
+│ Request ID: f31c7fa0-1be8-4de6-953f-a8463a00e07f                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Hello Jane! Welcome back. As a Gold member, you currently have 4,250 loyalty points. Your order **ORD-001** for Wireless Headphones Pro ($89.99) 
+shipped via UPS (tracking TRK987654321) is estimated to arrive on **October 13, 2026**. Let me know if you need anything else!
+
+==============================================================
+TEST 4 - Long-Term Memory - Session B (NEW session, same customer)
+Date: 2026-10-11 20:54:11 UTC
+$ agentcore invoke '{"prompt": "Do you remember my name and communication preference?", "customer_id": "CUST-123", "session_id": "s-B2"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: 88907d4d-9439-4db4-8bf1-f6e56d449c0e                                                                                                     │
+│ Request ID: 2bedbf91-a28b-451b-b09a-7ae43cb7e418                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Hello Jane! I remember your name and that you prefer concise responses. How can I help you today?
+
+==============================================================
+TEST 5 - Loyalty Discount (Code Interpreter)
+Date: 2026-10-11 20:06:58 UTC
+$ agentcore invoke '{"prompt": "I am a Gold member with 4250 points. Calculate my discount on a $150 standard order.", "customer_id": "CUST-123", "session_id": "t5"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: e347531c-9608-4f67-b427-059297f9559b                                                                                                     │
+│ Request ID: 2f99e6bc-2096-459b-9144-e14559075076                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Your Gold membership discount breakdown for a $150 standard order is:
+
+**Total Savings: $51.00**
+- **Loyalty Points Redeemed:** 4,000 points ($40.00 value)
+- **Gold Tier Discount:** 10% ($11.00)
+- **Final Total:** $99.00
+
+**Loyalty Points Update:**
+- **Points Earned:** 99 points
+- **Remaining Points Balance:** 349 points
+
+Your order will be processed at the discounted rate of $99.00.
+
+==============================================================
+TEST 6 - Browser Tool
+Date: 2026-10-11 20:07:06 UTC
+$ agentcore invoke '{"prompt": "Go to https://www.udacity.com and tell me the page title.", "customer_id": "CUST-123", "session_id": "t6"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: e347531c-9608-4f67-b427-059297f9559b                                                                                                     │
+│ Request ID: 11d9a059-d816-45aa-b400-84cb16fba9b6                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+The page title of https://www.udacity.com is:
+
+**"Learn the Latest Tech Skills; Advance Your Career | Udacity"**
+

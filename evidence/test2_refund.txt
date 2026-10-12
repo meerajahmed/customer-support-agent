@@ -1,0 +1,24 @@
+==============================================================
+TEST 2 - Refund Processing
+Date: 2026-10-11 20:05:36 UTC
+$ agentcore invoke '{"prompt": "I want to return my Kindle Paperwhite (ORD-002). Please initiate a refund.", "customer_id": "CUST-123", "session_id": "t2"}'
+--------------------------------------------------------------
+╭───────────────────────────────────────────────────────────────────── csagent ─────────────────────────────────────────────────────────────────────╮
+│ Session: e347531c-9608-4f67-b427-059297f9559b                                                                                                     │
+│ Request ID: 31ac22a9-58e9-4616-9fc3-02a435deed32                                                                                                  │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:013555259902:runtime/csagent-nP8dk6A2cg                                                                  │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --follow       │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/csagent-nP8dk6A2cg-DEFAULT --log-stream-name-prefix "2026/10/11/[runtime-logs" --since 1h     │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                  │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Your return and refund for order ORD-002 (Kindle Paperwhite) has been successfully processed!
+
+- **Refund ID:** REF-A935DZXO
+- **Amount:** $139.99
+- **Status:** Approved
+- **Credit timeline:** Will appear in your account within 3-5 business days
+
+The refund is now approved and your credit should reflect this amount shortly. Thank you for shopping with us!
+
